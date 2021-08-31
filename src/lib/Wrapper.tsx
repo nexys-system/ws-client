@@ -4,21 +4,23 @@ import { PreWsMessage } from "./ws-message";
 const WsWrapper = <WsMessage,>({
   children,
   w,
+  Loader = () => <p>Loading...</p>,
 }: {
   children: JSX.Element;
   w: PreWsMessage<WsMessage>;
+  Loader?: () => JSX.Element;
 }) => {
   const [isReady, setReady] = React.useState<boolean>(false);
-
-  w.wsPromiseReady.then((x) => {
-    setReady(true);
-  });
 
   if (isReady) {
     return children;
   }
 
-  return <p>Loading...</p>;
+  w.wsPromiseReady.then((x) => {
+    setReady(true);
+  });
+
+  return <Loader />;
 };
 
 export default WsWrapper;
