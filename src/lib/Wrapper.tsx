@@ -1,12 +1,12 @@
 import React from "react";
 import { PreWsMessage } from "./ws-message";
 
-const WsWrapper = ({
+const WsWrapper = <WsMessage,>({
   children,
   w,
 }: {
   children: JSX.Element;
-  w: PreWsMessage;
+  w: PreWsMessage<WsMessage>;
 }) => {
   const [isReady, setReady] = React.useState<boolean>(false);
 
