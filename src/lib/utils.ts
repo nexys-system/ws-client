@@ -3,9 +3,11 @@
  * @param socket
  * @returns
  */
-export const waitForOpenConnection = (socket: WebSocket): Promise<void> => {
+export const waitForOpenConnection = (
+  socket: WebSocket,
+  maxNumberOfAttempts: number = 10
+): Promise<void> => {
   return new Promise((resolve, reject) => {
-    const maxNumberOfAttempts = 10;
     const intervalTime = 200; //ms
 
     let currentAttempt = 0;
