@@ -3,14 +3,13 @@ import ReactDOM from "react-dom";
 
 import { PreWsMessage } from "./lib/ws-message";
 import WsWrapper from "./lib/Wrapper";
-
-const url = "ws://localhost:5000";
+import { getWsUrl } from "./utils";
 
 enum WsChannel {
   useCase1 = "ch1",
 }
 
-const w = new PreWsMessage<WsChannel>(url);
+const w = new PreWsMessage<WsChannel>(getWsUrl());
 
 const App = () => {
   w.sendMessage({ channel: WsChannel.useCase1, data: { message: "string" } });
