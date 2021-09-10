@@ -1,6 +1,6 @@
 import * as U from "./utils";
 
-interface WsMessageShape<A, WsChannel> {
+export interface WsMessageShape<A, WsChannel> {
   data: A;
   channel: WsChannel;
 }
