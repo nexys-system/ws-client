@@ -8,6 +8,7 @@
     "dist/*"
   ],
   "license": "MIT",
+  "keywords": ["websocket", "react", "client"],
   "dependencies": {},
   "repository": {
     "type": "git",
