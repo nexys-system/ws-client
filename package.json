@@ -9,6 +9,10 @@
   ],
   "license": "MIT",
   "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nexys-system/ws-client"
+  },
   "scripts": {
     "start": "SNOWPACK_PUBLIC_URL= snowpack dev",
     "build": "snowpack build",
